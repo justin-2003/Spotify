@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import HomePage from "./HomePage.jsx";
 import "./login.css";
 
 function Login() {
@@ -20,10 +21,6 @@ function Login() {
     window.location.href = "http://127.0.0.1:4000/login";
   };
 
-  const handleLogout = () => {
-    setToken(null);
-  };
-
   // Example: fetch user profile
   useEffect(() => {
     if (!token) return;
@@ -37,23 +34,17 @@ function Login() {
   }, [token]);
 
   return (
-    <div className="login-page">
-      <div className="login-card">
-        <h1 className="app-title">Loop</h1>
-
+    <div>
         {!token ? (
-          <button className="spotify-btn" onClick={handleLogin}>
-            Login with Spotify
-          </button>
+          <div className="login-page">
+            <div className="login-card">
+              <h1 className="app-title">Loop</h1>
+              <button className="spotify-btn" onClick={handleLogin}>Login with Spotify</button>
+            </div>
+          </div>
         ) : (
-          <>
-            <p className="success-text">Logged in! 🎧</p>
-            <button className="logout-btn" onClick={handleLogout}>
-              Logout
-            </button>
-          </>
+          <HomePage />
         )}
-      </div>
     </div>
   );
 }
