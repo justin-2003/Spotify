@@ -19,7 +19,7 @@ function Login() {
     window.history.replaceState({}, document.title, "/");
     console.log("Authenticated successfully!");
 
-    fetch("https://loop-gold-pi.vercel.app/home/store-token", {
+    fetch("https://loop-07er.onrender.com/home/store-token", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -32,7 +32,7 @@ function Login() {
     }, []);
 
   const handleLogin = () => {
-    window.location.href = "https://loop-gold-pi.vercel.app/login";
+    window.location.href = "https://loop-07er.onrender.com/login";
   };
 
   return (
