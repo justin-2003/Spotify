@@ -6,13 +6,13 @@ function HomePage(){
     const [playlist, setPlaylist] = useState("");
 
     useEffect(() => {
-        fetch("http://127.0.0.1:4000/home/me")
+        fetch("https://loop-07er.onrender.com/home/me")
         .then(res => res.json())
         .then(data => setUser(data));
     }, []);
 
     useEffect(() => {
-        fetch("http://127.0.0.1:4000/home/me/playlists")
+        fetch("https://loop-07er.onrender.com/home/me/playlists")
         .then(res => res.json())
         .then(data => setPlaylist(data));
     }, []);
