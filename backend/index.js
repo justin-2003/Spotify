@@ -7,7 +7,13 @@ import homeRoutes from './routes/homeRoutes.js';
 dotenv.config();
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: [
+    "http://localhost:5173",              // local dev
+    "https://loop-8my7rsutc-justin-2003s-projects.vercel.app"    // Vercel frontend
+  ],
+  credentials: true
+}));
 const PORT = 4000;
 
 //routes
