@@ -1,5 +1,5 @@
 import React,{useEffect, useState} from 'react';
-import "./homePage.css";
+import "./homepage.css";
 
 function HomePage(){
     const [user, setUser] = useState("");
